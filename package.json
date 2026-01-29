@@ -1,0 +1,53 @@
+{
+  "name": "vite-react-typescript-starter",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit -p tsconfig.app.json",
+    "build:child": "vite build --config vite.config.child.ts",
+    "build:parent": "vite build --config vite.config.parent.ts",
+    "build:school": "vite build --config vite.config.school.ts",
+    "cap:init:child": "npm run build:child && npx cap init --web-dir=dist-child --config capacitor.config.child.ts",
+    "cap:init:parent": "npm run build:parent && npx cap init --web-dir=dist-parent --config capacitor.config.parent.ts",
+    "cap:init:school": "npm run build:school && npx cap init --web-dir=dist-school --config capacitor.config.school.ts",
+    "cap:add:android:child": "npx cap add android --config capacitor.config.child.ts",
+    "cap:add:android:parent": "npx cap add android --config capacitor.config.parent.ts",
+    "cap:add:android:school": "npx cap add android --config capacitor.config.school.ts",
+    "cap:sync:child": "npm run build:child && npx cap sync --config capacitor.config.child.ts",
+    "cap:sync:parent": "npm run build:parent && npx cap sync --config capacitor.config.parent.ts",
+    "cap:sync:school": "npm run build:school && npx cap sync --config capacitor.config.school.ts",
+    "setup:all": "npm run build:child && npm run build:parent && npm run build:school"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.0.2",
+    "@capacitor/cli": "^8.0.2",
+    "@capacitor/core": "^8.0.2",
+    "@supabase/supabase-js": "^2.57.4",
+    "@types/leaflet": "^1.9.21",
+    "leaflet": "^1.9.4",
+    "lucide-react": "^0.344.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.9.1",
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^10.4.18",
+    "eslint": "^9.9.1",
+    "eslint-plugin-react-hooks": "^5.1.0-rc.0",
+    "eslint-plugin-react-refresh": "^0.4.11",
+    "globals": "^15.9.0",
+    "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.5.3",
+    "typescript-eslint": "^8.3.0",
+    "vite": "^5.4.2"
+  }
+}
